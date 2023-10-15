@@ -18,35 +18,49 @@
         </header>
 
         <div id="tabs">
-            <h2 data-tab-show="albums">Albummer</h2>
-            <h2 data-tab-show="artists">Artister</h2>
-            <h2 data-tab-show="tracks">Sange</h2>
-            <table id="albums" class="hide">
+            <h2 data-tab-show="albums-table">Albummer</h2>
+            <h2 data-tab-show="artists-table">Artister</h2>
+            <h2 data-tab-show="tracks-table">Sange</h2>
+
+            <!-- albums table -->
+            <table id="albums-table" class="hide">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Cover</th>
+                        <th>Title</th>
+                        <th>Releasedate</th>
+                        <th>Tracks</th>
                     </tr>
                 </thead>
+                <tbody id="albums-table-tbody"></tbody>
             </table>
-            <table id="artists" class="hide">
+
+            <!-- artists table -->
+            <table id="artists-table" class="hide">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Name</th>
+                        <th>Birthdate</th>
+                        <th>Genres</th>
+                        <th>Website</th>
+                        <th>Image</th>
+                        <th>Number og Albums</th>
                     </tr>
                 </thead>
+                <tbody id="artists-table-tbody"></tbody>
             </table>
-            <table id="tracks" class="hide">
+
+            <!-- tracks table -->
+            <table id="tracks-table" class="hide">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                        <th>Artists</th>
+                        <th>Albums</th>
                     </tr>
                 </thead>
+                <tbody id="tracks-table-tbody"></tbody>
             </table>
         </div>
 
