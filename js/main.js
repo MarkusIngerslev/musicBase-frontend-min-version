@@ -50,6 +50,23 @@ async function initApp() {
     albumList.render();
     artistList.render();
     trackList.render();
+
+    // Event Listeners
+    document.querySelector("#sort-album-title").addEventListener("click", () => albumList.sort("albumTitle"));
+    document.querySelector("#sort-album-releasedate").addEventListener("click", () => albumList.sort("releaseDate"));
+    document.querySelector("#sort-album-tracks").addEventListener("click", () => albumList.sort("numberofTracks"));
+    // add sort eventlisteners artist
+    document.querySelector("#sort-artist-name").addEventListener("click", () => artistList.sort("name"));
+    document.querySelector("#sort-artist-birthdate").addEventListener("click", () => artistList.sort("birthdate"));
+    document.querySelector("#sort-artist-genres").addEventListener("click", () => artistList.sort("genres"));
+    document.querySelector("#sort-artist-website").addEventListener("click", () => artistList.sort("website"));
+    document
+        .querySelector("#sort-artist-numberOfAlbums")
+        .addEventListener("click", () => artistList.sort("numberOfAlbums"));
+    // add sort eventlisteners tracks
+    document.querySelector("#sort-tracks-trackName").addEventListener("click", () => trackList.sort("trackName"));
+    document.querySelector("#sort-tracks-duration").addEventListener("click", () => trackList.sort("duration"));
+    document.querySelector("#sort-tracks-artistNames").addEventListener("click", () => trackList.sort("artistNames"));
 }
 
 // ===== FUNKTIONS ===== \\
