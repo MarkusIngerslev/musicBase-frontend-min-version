@@ -1,6 +1,8 @@
 // ===== IMPORTS ===== \\
 import { initTabs } from "./tabs.js";
 import { getAlbumData, getTrackData, getArtistData } from "./restService.js";
+// class imports
+import { ListRenderer } from "./ListRenderer.js";
 
 // ===== Global varibles ===== \\
 // array for data from database
@@ -28,4 +30,9 @@ async function initApp() {
     albums = await getAlbumData();
     artists = await getArtistData();
     tracks = await getTrackData();
+
+    // display lists
+    const albumList = new ListRenderer(albums, "albums-table-tbody", null);
+    const artistList = new ListRenderer(artists, "artists-table-tbody", null);
+    const trackList = new ListRenderer(tracks, "tracks-table-tbody", null);
 }

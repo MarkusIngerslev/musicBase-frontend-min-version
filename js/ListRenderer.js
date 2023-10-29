@@ -1,4 +1,4 @@
-class ListRenderer {
+export class ListRenderer {
     constructor(list, container, itemRenderer) {
         this.items = list;
         this.container = document.querySelector(container);
