@@ -2,7 +2,8 @@
 import { initTabs } from "./tabs.js";
 import { getAlbumData, getTrackData, getArtistData } from "./restService.js";
 // class imports
-import { ListRenderer } from "./ListRenderer.js";
+import { ListRenderer } from "./renderers/ListRenderer.js";
+import { AlbumRenderer } from "./renderers/AlbumRenderer.js";
 
 // ===== Global varibles ===== \\
 // array for data from database
@@ -31,8 +32,13 @@ async function initApp() {
     artists = await getArtistData();
     tracks = await getTrackData();
 
-    // display lists
-    const albumList = new ListRenderer(albums, "albums-table-tbody", null);
-    const artistList = new ListRenderer(artists, "artists-table-tbody", null);
-    const trackList = new ListRenderer(tracks, "tracks-table-tbody", null);
+    // Create instance of Renderes
+    const albumRenderer = new AlbumRenderer();
+
+    // Display lists
+    const albumList = new ListRenderer(albums, "#albums-table-tbody", albumRenderer);
+    const artistList = new ListRenderer(artists, "#artists-table-tbody", null);
+    const trackList = new ListRenderer(tracks, "#tracks-table-tbody", null);
+
+    albumList.render();
 }
